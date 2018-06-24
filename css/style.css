@@ -1,0 +1,156 @@
+/* Import Google Web Fonts */
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
+/* Bootstrap overwrite */
+.navbar{
+  border-radius:0;
+  font-size: 16px;
+  margin-bottom:0;
+}
+
+/* Strong font and text colour */
+.whaamMini {
+  color: #FFFF01;
+  font-family: "Bangers";
+  font-size: 36px;
+  padding-right: 12px;
+  text-shadow:
+    -1px -1px 0 #343333,
+     1px -1px 0 #343333,
+    -1px  1px 0 #343333,
+     1px  1px 0 #343333;
+}
+
+.jumbotron{
+  /* Image credit: David Marshall / DeviantArt, see "https://chod.deviantart.com/art/Roy-Lichtenstein-Whaam-11917993" */
+  /* © 2004-2018 chod *** Free Download *** Originally by Roy Lichtenstein */
+  background-image: url(../whaamByChod.jpg);
+  background-size: cover;
+  margin: 0;
+  padding-top: 0;
+}
+
+/* Text-shadow and inverse-shadow used to increase legibility, especially when text appears on top of an image */
+.shadow {
+  text-shadow:
+    -1px -1px 0 #FFF,
+     1px -1px 0 #FFF,
+    -1px  1px 0 #FFF,
+     1px  1px 0 #FFF;
+}
+
+/* Increased font size for Web Accessibility */
+p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+/* Change the cursor when hovering over the Read more button, the cursor prompts the reader there is more to read */ 
+.help {
+  cursor: help;
+}
+
+/* V-sync */
+#firstHeading{
+  margin-top: 0;
+}
+
+.whaamHead {
+  color: #FFFF01;
+  font-family: "Bangers";
+  font-size: 48px;
+  padding-right: 12px;
+  text-shadow:
+    -1px -1px 0 #343333,
+     1px -1px 0 #343333,
+    -1px  1px 0 #343333,
+     1px  1px 0 #343333;
+}
+
+.whaamClose {
+  font-family: "Bangers";
+  font-size: 26px;
+  text-shadow:
+    -1px -1px 0 #343333,
+     1px -1px 0 #343333,
+    -1px  1px 0 #343333,
+     1px  1px 0 #343333;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/* Think the question looks better as a question NOT a label */
+label {
+  display: none;
+}
+
+.form_inline {
+  margin: 0;
+  padding: 0;
+}
+
+p.default{
+  font-size: 16px;
+}
+
+.whaam {
+  color: #FFFF01;
+  font-family: "Bangers";
+  font-size: 26px;
+  text-shadow:
+    -1px -1px 0 #343333,
+     1px -1px 0 #343333,
+    -1px  1px 0 #343333,
+     1px  1px 0 #343333;
+}
+
+/* Fixes the position of the thumbnail */
+.fixed {
+  border-radius: 6px;
+  bottom: 36vh;
+  right:  18vh;
+  position: fixed;
+  width: 150px;
+}
+
+/* Creates a image border */
+img {
+  background-color: #FFFF01;
+  border:  1px solid #343333;
+  padding: 2px;
+}
+
+/* Image disappears when not hovering over the book */
+.gone {
+  display: none;
+}
+
+/* H-sync, v-sync */
+footer a {
+  font-size: 16px;
+  margin: 2px;
+  padding: 0;
+}
+
+/* WHAAM!Font */
+footer a:hover{
+  color: #FFFF01;
+  font-family: "Bangers";
+  font-size: 26px;
+  margin: 4px;
+  padding: 0px;
+  text-shadow:
+    -1px -1px 0 #343333,
+     1px -1px 0 #343333,
+    -1px  1px 0 #343333,
+     1px  1px 0 #343333;
+}
+
+/* Removes the developer links when viewed on smaller devices */
+@media (max-width: 995px) {
+  #footer1stRow {
+    display: none;
+  }
+}

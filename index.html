@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<!-- The language of each page can be determined programmatically (web accessibility) -->
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<!-- Display content in the highest mode available (Internet Explorer). Use if you want to support Internet Explorer prior to version 11 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- The browser controls the page's dimensions and scaling -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- THESE THREE META TAGS MUST COME FIRST IN THE HEAD, see "https://github.com/joshbuchea/HEAD" -->
+
+		<!-- Student number -->
+		<meta name="author" content="C1768263">
+
+		<meta name="description" content="Web App Development - Coursework 2 API Front-end">
+
+		<title>Google Books Authors</title>
+
+		<!-- Links to external CSS file -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- My stylesheet -->
+		<link href="css/style.css" rel="stylesheet">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Navbar section, navbar-inverse to increase text contrast ratio -->
+		<nav class="navbar navbar-inverse">
+
+			<!-- Start centring content -->
+			<div class="container">
+
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					
+					<span class="sr-only">Toggle navigation </span>
+					
+					<!-- Burger icon -->
+					<span class="icon-bar"></span>
+					
+					<span class="icon-bar"></span>
+					
+					<span class="icon-bar"></span>
+					
+					</button>
+
+					<!-- Website logo, link to index.html as is convention -->
+					<a class="whaamMini" href="index.html">whaam!Books </a>
+				
+				</div>
+
+				<!-- Collect the nav links, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					
+					<ul class="nav navbar-nav">
+
+						<!-- Page hyperlinks, active class shows the browser where they are -->
+						<li class="active"><a href="index.html">Book Search <span class="sr-only">(current)</span></a></li>
+						
+						<li><a href="storeLocator.html">Map </a></li>
+						
+						<li class="dropdown">
+							
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Useful Links <span class="caret"></span></a>
+							
+							<ul class="dropdown-menu">
+								
+								<!-- List of "helpful" website links -->
+								<li><a target="_blank" href="http://www.cardiffbooks.com/">Cardiff Books </a></li>
+								
+								<li><a target="_blank" href="http://www.troutmarkbooks.com/">Troutmark Books </a></li>
+								
+								<li><a target="_blank" href="https://www.waterstones.com/">Waterstones </a></li>
+								
+								<li><a target="_blank" href="https://www.abebooks.co.uk/?cm_sp=TopNav-_-servlet-_-Logo">AbeBooks </a></li>
+								
+								<li><a target="_blank" href="https://www.whsmith.co.uk/">WHSmith </a></li>
+								
+								<li><a target="_blank" href="http://www.studentmonkey.com/">Student Monkey </a></li>
+								
+								<li><a target="_blank" href="https://www.cardiffbookfestival.co.uk/">Cardiff Book Festival </a></li>
+								
+								<li><a target="_blank" href="http://octavobooks.co.uk/">Octavo's </a></li>
+								
+								<li role="separator" class="divider"></li>
+								
+								<li><a target="_blank" href="https://www.cardiff.ac.uk/libraries">Libraries - Cardiff University </a></li>
+								
+								<li><a target="_blank" href="https://www.cardiff.gov.uk/ENG/resident/Libraries-and-archives/Pages/default.aspx">Libraries in Cardiff </a></li>
+							
+							</ul>
+						
+						</li>
+
+						<!-- Display date -->
+						<li><a target="_blank" id="datetime" href="https://time.is/"></a></li>
+					
+					</ul>
+				
+				</div>
+			
+			</div>
+		
+		</nav>
+
+		<!-- Main content for the page -->
+		<main>
+
+			<!-- Welcomes the browser -->
+			<div class="jumbotron text-center text">
+
+				<!-- Center content -->
+				<div class="container">
+
+					<h1 class="shadow">Welcome to My Website</h1>
+
+					<p class="shadow">The Best Place on the Internet for Book Lovers</p>
+
+					<!-- As requested by Google API guides -->
+					<p class="shadow">powered by Google</p>
+
+					<!-- Modal popup -->
+					<button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#myModal">Read More</button>
+
+				</div>
+
+			</div>
+
+			<!-- Absolute centre -->
+			<div class="container text-center">
+
+				<!-- Main question -->
+				<h2>Who is your favourite author?</h2>
+
+				<div class="form-inline">
+
+					<!-- Invisible, doesn't fit the theme of the website -->
+					<label for="searchTerm">Name: </label>
+
+					<input type="text" class="form-control" id="searchTerm" placeholder="Name">
+
+					<button class="btn btn-default" id="searchButton">Search</button>
+
+				</div>
+
+			</div>
+
+			<div class="container">
+
+				<!-- Results will be displayed here -->
+				<div id="output"></div>
+
+			</div>
+
+			<br>
+
+		</main>
+
+		<!-- Standard bootstrap footer -->
+		<footer class="container text-center">
+
+			<hr>
+
+			<!-- Links to the documentation for bootstrap, the APIs used, LeafletJS and Mapbox. Will be set display: none; with media queries targeting smaller devices -->
+			<div class="row" id= "footer1stRow">
+
+				<div class="col-lg-12">
+
+					<div class="col-md-3">
+
+						<ul class="nav nav-pills nav-stacked">
+
+							<li><a target="_blank" href="https://getbootstrap.com/">Bootstrap </a></li>
+
+							<li><a target="_blank" href="https://developers.google.com/books/docs/overview">Google Books APIs </a></li>
+						</ul>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<ul class="nav nav-pills nav-stacked">
+
+							<li><a target="_blank" href="http://leafletjs.com/">Leaflet </a></li>
+
+							<li><a target="_blank" href="https://www.mapbox.com/">Mapbox </a></li>
+
+						</ul>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<ul class="nav nav-pills nav-stacked">
+
+							<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation">HTML5 Geolocation </a></li>
+
+							<li><a target="_blank" href="https://developers.google.com/maps/documentation/geocoding/intro">Geocoding API </a></li>
+
+						</ul>
+
+					</div>
+
+					<div class="col-md-3">
+
+						<ul class="nav nav-pills nav-stacked">
+
+							<li><a target="_blank" href="https://openweathermap.org/">OpenWeatherMap </a></li>
+
+							<li><a href="#">Developers </a></li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<hr>
+
+			<div class="row">
+
+				<div class="col-lg-12">
+
+					<ul class="nav nav-pills nav-justified">
+
+						<!-- Contact us link -->
+						<li><a href="mailto:me@whaambooks.com?Subject=Hi%20there">&#169; 2017 WHAAM!Books </a></li>
+
+						<!-- Non-functioning link, just something you see on most websites -->
+						<li><a href="#">Terms of Service</a></li>
+
+						<!-- link back to the top of the page, without reloading -->
+						<li><a href="#top">Go to top</a>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</footer>
+
+		<!-- My JavaScript, put in the body section. When put in the head section, there may be a slight delay when referencing web page elements -->
+		<script src="js/script.js"></script>
+
+		<!-- Popup introduction to the website and functionality -->
+		<div class="modal fade" id="myModal" role="dialog">
+
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+						<h3 class="modal-title whaamMini">About WHAAM!BOOKS</h3>
+
+					</div>
+
+					<div class="modal-body">
+
+						<h3 id="firstHeading">Who Are We? </h3>
+
+						<!-- Filler content -->
+						<p>WHAAM!Books is a website for book readers and book recommendations. Our goal is to help readers find new books they fall in love with. WHAAM!Books was submitted in partial fulfilment of the requirements for the degree of MSc Computing in January 2018. </p>
+
+						<h3>A Few Things You Can Do Here</h3>
+
+						<p>Search the Google Books API by Author, See what books most people are reading, Check book covers and, by clicking on that book, purchase on Amazon. Alternatively, you can search Google's Geocoding API for bookshops closest to you, and OpenWeatherMap for up-to-date weather in Cardiff (so you don't get caught in the rain), or just click on one of the links at the top.</p>
+
+					</div>
+
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-danger whaamClose" data-dismiss="modal">Close</button>
+
+					</div>
+
+				</div>
+
+			</div>
+			
+		</div>
+
+	</body>
+
+</html>

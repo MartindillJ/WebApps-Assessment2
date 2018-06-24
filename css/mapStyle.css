@@ -1,0 +1,106 @@
+/* Import Google Web Fonts */
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
+/* Bootstrap overwrite */
+.navbar{
+  border-radius:0;
+  font-size: 16px;
+  margin-bottom:0;
+}
+
+/* Strong font and text colour */
+.whaamMini {
+  color: #FFFF01;
+  font-family: "Bangers";
+  font-size: 36px;
+  /* H-sync */
+  padding-right: 12px;
+  /* Text-shadow and inverse-shadow used to increase legibility, especially when text appears on top of an image */
+  text-shadow:
+    -1px -1px 0 #343333,
+     1px -1px 0 #343333,
+    -1px  1px 0 #343333,
+     1px  1px 0 #343333;
+}
+
+#mapContainer {
+	height: 67vh;
+	width:  67vw;
+	margin: 20px 0 0 120px;
+	padding:  0;
+}
+
+@media (max-width: 995px) {
+  /* Bigger map on smaller devices/screens */
+  #mapContainer {
+    height: 80vh;
+    width:  100vw;
+    margin: 20px 0 0 20px;
+    padding:  0;
+  }
+
+  /* Removes unnecessary clutter */
+  #imgContainer img[src="youAreHere.jpg"] {
+    display: none;
+  }
+
+  /* Removes the developer links when viewed on smaller devices */
+  #footer1stRow {
+    display: none;
+  }
+}
+
+/* V-sync */
+#imgContainer {
+	line-height: 33vh;
+}
+
+#imgContainer img[src="youAreHere.jpg"] {
+	max-height: 100%;
+	max-width:  100%;
+  /* V-sync */
+	vertical-align: middle;
+}
+
+.whaam {
+  color: #FFFF01;
+  font-family: "Bangers";
+  font-size: 36px;
+  text-shadow:
+    -1px -1px 0 #343333,
+     1px -1px 0 #343333,
+    -1px  1px 0 #343333,
+     1px  1px 0 #343333;
+}
+
+.whaamClose {
+	display: table-cell;
+	font-family: "Bangers";
+	font-size: 28px;
+	text-shadow:
+		-1px -1px 0 #343333,
+		 1px -1px 0 #343333,
+		-1px  1px 0 #343333,
+		 1px  1px 0 #343333;
+}
+
+/* Increase legibility, h-sync, v-sync */
+footer a {
+  font-size: 16px;
+  margin: 2px 0 2px 0;
+  padding: 0;
+}
+
+/* WHAAM!Font */
+footer a:hover{
+  color: #FFFF01;
+  font-family: "Bangers";
+  font-size: 26px;
+  margin: 4px 0 4px 0;
+  padding: 0px;
+  text-shadow:
+    -1px -1px 0 #343333,
+     1px -1px 0 #343333,
+    -1px  1px 0 #343333,
+     1px  1px 0 #343333;
+}
