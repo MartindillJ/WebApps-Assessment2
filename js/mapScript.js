@@ -76,7 +76,7 @@ function showPosition(position){
 }
 
 // APIKey for Google Geocoding API, requested but not necessary
-// const APIKey = "AIzaSyDa11H6AKELCU3RZvWzLQrxum0Li75E2c4";
+// const APIKey = "PASTE YOUR API KEY HERE";
 
 // Define string
 var baseURL = "https://maps.googleapis.com/maps/api/geocode/";
