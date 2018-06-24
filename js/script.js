@@ -3,7 +3,7 @@ var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 // API Key for Google Books
-const APIKey = "AIzaSyCGhJS9z8hgH2rD8DHBxeUhts12I0REsZs";
+const APIKey = "PASTE YOUR API KEY HERE";
 
 var processResponse = function(response){
 	// Specify location for output
